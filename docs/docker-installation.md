@@ -1,51 +1,68 @@
-## Docker Desktop Installation Guide
+# Docker Desktop Installation Guide
 
-### 1. Install Docker Desktop
-Download and install Docker Desktop from the following link:
-
-https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
-
-Before installing, review the official system requirements:
-https://docs.docker.com/desktop/setup/install/windows-install/
+This guide will help you install Docker Desktop and resolve common setup issues.
 
 ---
 
-### 2. Fix "WSL needs updating" Error
+## 1. Install Docker Desktop
 
-After installing Docker Desktop, you may see the error:
+Download and install Docker Desktop using the official installer:
+
+https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
+
+Before starting the installation, review the official Docker documentation:
+
+https://docs.docker.com/desktop/setup/install/windows-install/
+
+Follow the installer instructions and complete the setup.
+
+---
+
+## 2. Fix "WSL Needs Updating" Error
+
+After installing Docker Desktop, you may encounter the following error:
 
 `WSL needs updating`
 
-To fix this:
+To resolve this issue:
 
-1. Open **Command Prompt as Administrator**.
+1. Open **Command Prompt** as **Administrator**.
 2. Run the following command:
 
 ```bash
 wsl --update
 ```
 
-3. This will update **Windows Subsystem for Linux (WSL)** on your system.
+3. This command updates the **Windows Subsystem for Linux (WSL)** on your system.
+
+Once the update is complete, restart Docker Desktop.
 
 ---
 
-### 3. Skip Docker Login
+## 3. Skip Docker Login
 
-We do not require a Docker account for this setup.
+A Docker account is **not required** for this setup.
 
-If Docker Desktop asks you to log in, simply **skip the login step**.
+If Docker Desktop prompts you to sign in:
+- Simply **skip the login step**.
 
-If you encounter any errors:
+If any issues occur:
 - Follow **Step 2** to update WSL.
 - Restart your system.
 
 ---
 
-### System Requirements for Docker Desktop
+## ⚠️ System Requirements
 
-Ensure your system meets the following requirements:
+> **Warning**
+> Ensure your system meets the following requirements before installing Docker Desktop.  
+> Docker may fail to start if these requirements are not satisfied.
 
-- **64-bit CPU with virtualization support**
-- **WSL 2**
+Minimum requirements:
+
+- **64-bit CPU with virtualization support enabled**
+- **WSL 2 installed and enabled**
 - **Windows 10 or Windows 11 (64-bit)**
 - **Minimum 4 GB RAM (8 GB recommended)**
+
+If virtualization is disabled, enable it in your **BIOS/UEFI settings** before installing Docker Desktop.
